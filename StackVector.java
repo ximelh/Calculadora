@@ -1,5 +1,9 @@
 public class StackVector<E> extends AStack<E> {
 
+    public StackVector(){
+
+    }
+
     @Override
     public void add(E item) {
         // TODO Auto-generated method stub
@@ -29,5 +33,5 @@ public class StackVector<E> extends AStack<E> {
         // TODO Auto-generated method stub
         return 0;
     }
-    
+
 }

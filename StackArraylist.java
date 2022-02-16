@@ -1,5 +1,9 @@
 public class StackArraylist<E> extends AStack<E> {
 
+    public StackArraylist(){
+        
+    }
+
     @Override
     public void add(E item) {
         // TODO Auto-generated method stub
