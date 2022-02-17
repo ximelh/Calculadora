@@ -1,5 +1,5 @@
 
-public class CalculadoraG10 implements Calculator {
+public class CalculadoraGrupo10 implements Calculator {
 
     @Override
     public double calculate(String operation) throws Exception {
