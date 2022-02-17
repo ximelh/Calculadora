@@ -1,4 +1,4 @@
-/***
+/****
  * CalculadoraGrupo10.java
  * @since 17/02/2022
  * Clase de la calculadora
@@ -6,6 +6,28 @@
 
 public class CalculadoraGrupo10 implements Calculator {
 
+    //esta es la variable que nos ayuda a aplicar el patron de singleton
+    private static CalculadoraGrupo10 calculadora;
+
+    /**
+     * Constructor de la calculadora
+     */
+    private CalculadoraGrupo10(){
+    }
+
+    /**
+     * Aplicacion del patron singleton
+     */
+    public static CalculadoraGrupo10 getInstance(){
+        return calculadora == null ? calculadora = new CalculadoraGrupo10() : calculadora;
+    }
+
+    /***
+    * Metodo que calcula la respuesta de un string dado en posfix
+    * @param operation string con la operacion a realizar
+    * @param tipoStack el tipo del stack a instanciar
+    * @param tipoList si se hace list, se necesita el parametro
+    */
     @Override
     public double calculate(String operation, String tipoStack, String tipoList) throws Exception{
         // TODO Auto-generated method stub
