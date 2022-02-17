@@ -92,21 +92,23 @@ public class Controlador {
          String result = "";
          StackVector<Character> stack = new StackVector<Character>();
           
-         for (int i = 0; i<in.length(); ++i)
-         {
+         for (int i = 0; i<in.length(); ++i){
              char c = in.charAt(i);
-             if (Character.isLetterOrDigit(c)) // si se encuentra un operando
+             if (Character.isLetterOrDigit(c)){ // si se encuentra un operando
                  result += c;
-             else if (c == '(') // si se encuentra un parentesis asi: (
+                 result += " ";
+             }else if (c == '('){ // si se encuentra un parentesis asi: (
                  stack.add(c);
-             else if (c == ')'){ //  si se encuentra un parentesis asi: )
+             }else if (c == ')'){ //  si se encuentra un parentesis asi: )
                  while (!stack.empty() &&stack.peek() != '(')
                          result += stack.remove();
+                         result += " ";
                          stack.remove();
                  }
                  else{ // un operador se encuentra
                      while (!stack.empty() && importancia(c) <= importancia(stack.peek())){
                          result += stack.remove();
+                         result += " ";
                   }
                      stack.add(c);
                  }
@@ -115,7 +117,10 @@ public class Controlador {
                  if(stack.peek() == '(')
                      return "Invalid Expression";
                  result += stack.remove();
+                 result += " ";
               }
+
+              
              return result;
          }
 }
