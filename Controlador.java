@@ -1,3 +1,8 @@
+/***
+ * Controlador.java
+ * @since 17/02/2022
+ * Clase para controlar archivos
+ */
 
 public class Controlador {
 
@@ -5,11 +10,11 @@ public class Controlador {
 
     }
 
-    public void Leer(){
+    public void leer(){
 
     }
 
-    public void Infix(){
+    public void infix(){
         
 
     }
