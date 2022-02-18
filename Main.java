@@ -51,7 +51,6 @@ public class Main {
         for (String operacion:operaciones){
             System.out.println(operacion);
         }
-
         scan.close();
     }
 }
