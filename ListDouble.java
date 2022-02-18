@@ -5,8 +5,8 @@
  */
 
 public class ListDouble<E> extends AbstractList<E> {
-    
-private ArrayList<String> lista = new ArrayList<String>();
+
+    private Vector<String> vector = new Vector<String>();
 	
 	/** 
 	 * @param item
@@ -14,7 +14,7 @@ private ArrayList<String> lista = new ArrayList<String>();
 	 */
 	public void push(String item) {
 		// TODO Auto-generated method stub
-		lista.add(0, item);
+		vector.add(0, item);
 	}
 	
 	/** 
@@ -24,7 +24,7 @@ private ArrayList<String> lista = new ArrayList<String>();
 	public String pop() {
 		// TODO Auto-generated method stub
 		String value = peek();
-		lista.remove(0);
+		vector.remove(0);
 		return value;
 	}
 	
@@ -34,29 +34,30 @@ private ArrayList<String> lista = new ArrayList<String>();
 	 */
 	public String peek() {
 		// TODO Auto-generated method stub
-		return lista.get(0);
+		return vector.get(0);
 	}
 	
 	/** 
 	 * @return boolean
-	 * Devuelve un valor booleano para reconocer si la lista se encuentra vacia o no
+	 * Devuelve un valor booleano para reconocer si la pila se encuentra vacia o no
 	 */
 	public boolean empty() {
 		// TODO Auto-generated method stub
-		return lista.isEmpty();
+		return vector.isEmpty();
 	}
 	
 	/** 
 	 * @return int
-	 * Devuelve el tamano de la lista
+	 * Devuelve el tamano de la pila
 	 */
 	public int size() {
 		// TODO Auto-generated method stub
-		return lista.size();
+		return vector.size();
 	}
 	
 	/** 
 	 * @param input
+	 * @return Double
 	 */
      
 	public Double resolver(String input) {
@@ -64,10 +65,12 @@ private ArrayList<String> lista = new ArrayList<String>();
 		Double resultado = 0.0;
 		input = input.replaceAll(" ","");
 		for(String ch: input.split("")) {
+		//Funcion que va provando los valores dentro de la pila
 			try {
-				//Condicional que analiza el operador
-				//Suma, resta, multiplicacion, division, potencia
+				//Condicional que almacena los posibles casos
 				switch(ch){
+				//Recorre el string para encontrar un operando
+				//Suma, resta, multiplicacion, division, potencia
 				case "+":
 					operandoA = Double.parseDouble(pop());
 					operandoB = Double.parseDouble(pop());
@@ -86,19 +89,19 @@ private ArrayList<String> lista = new ArrayList<String>();
 					resultado = operandoA * operandoB;
 					push(resultado.toString());
 					break;
-				//Condicional de division
+				//Caso para division
 				case "/":
 					operandoA = Double.parseDouble(pop());
 					operandoB = Double.parseDouble(pop());
-					//Condicional para verificar que no haya
-					//una división inválida.
 					if(operandoB == 0) {
 						resultado = 0.0;
 					}
 					resultado = operandoA / operandoB;
 					push(resultado.toString());
 					break;
-				//Funciion que recorre el String
+				//Caso contrario a los anteriores,
+				//se pasa al siguiente char y se determina
+				//su clasificacion.
 				default:
 					try {
 						Double test = Double.parseDouble(ch);
@@ -107,7 +110,7 @@ private ArrayList<String> lista = new ArrayList<String>();
 				}
 			}catch(Exception NoSuchElementException) {}
 		}
-		//Retorna la variable resultado
+		//Retorna el resultado postfix
 		return resultado;
 	}
 
