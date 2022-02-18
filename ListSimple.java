@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /***
  * ListSimple.java
  * @since 17/02/2022
@@ -7,7 +9,7 @@
 
 public class ListSimple<E> extends AbstractList<E> {
         
-    private ArrayList<String> simple = new ArrayList<String>();
+    private ArrayList<String> lista = new ArrayList<String>();
 	
 	/** 
 	 * @param item
@@ -15,7 +17,7 @@ public class ListSimple<E> extends AbstractList<E> {
 	 */
 	public void push(String item) {
 		// TODO Auto-generated method stub
-		simple.add(0, item);
+		lista.add(0, item);
 	}
 	
 	/** 
@@ -25,7 +27,7 @@ public class ListSimple<E> extends AbstractList<E> {
 	public String pop() {
 		// TODO Auto-generated method stub
 		String value = peek();
-		simple.remove(0);
+		lista.remove(0);
 		return value;
 	}
 	
@@ -35,7 +37,7 @@ public class ListSimple<E> extends AbstractList<E> {
 	 */
 	public String peek() {
 		// TODO Auto-generated method stub
-		return simple.get(0);
+		return lista.get(0);
 	}
 	
 	/** 
@@ -44,7 +46,7 @@ public class ListSimple<E> extends AbstractList<E> {
 	 */
 	public boolean empty() {
 		// TODO Auto-generated method stub
-		return simple.isEmpty();
+		return lista.isEmpty();
 	}
 	
 	/** 
@@ -53,7 +55,7 @@ public class ListSimple<E> extends AbstractList<E> {
 	 */
 	public int size() {
 		// TODO Auto-generated method stub
-		return simple.size();
+		return lista.size();
 	}
 	
 	/** 

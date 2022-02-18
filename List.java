@@ -10,10 +10,10 @@ public interface List<E> {
      public void push(String item);
 	   // La expresion se agrega a la lista
 	   
-	   public E pop();
+	   public String pop();
 	   // La expresión se remueve de la lista y se retorna el valor de dicha funcion. 
 
-	   public E peek();
+	   public String peek();
 	   // Se devuelve la ultima expresión que se encuentre en la lista
 	   
 	   public boolean empty();
