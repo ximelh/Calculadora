@@ -57,6 +57,7 @@ public class StackVector<E> extends AbstractStack<E> {
         
     /**
      * Agrega un elemento al stack
+     * @param item a agregar
      */
     @Override
     public void add(E item) {
