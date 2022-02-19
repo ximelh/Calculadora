@@ -10,11 +10,11 @@ public class ListFactory<E> {
      * Metodo para obtener el stack
      * @param list tipo de list si se elige list S - Simple, D - double 
      */
-    public List<E> getList(String entry) {
+    public LinkedList<E> getList(String entry) {
         // seleccion de la implementacion a utilizar:
         if (entry.equalsIgnoreCase("S"))
-          return new ListSimple<E>(); //regresa Simple
+          return new SimpleLinkedList<E>(); //regresa Simple
         else 
-            return new ListDouble<E>(); //regresa Vector
+            return new DoubleLinkedList<E>(); //regresa Vector
        }
 }

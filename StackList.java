@@ -6,19 +6,18 @@
 
 public class StackList<E> extends AbstractStack<E> {
 
-    private List<E> stack;
+    private LinkedList<E> stack;
 
     public StackList(String list){ //el parametro llama la lista a ser creada
         ListFactory<E> lFactory = new ListFactory<E>();
         this.setStack(lFactory.getList(list));
     }
 
-    public List<E> getStack() {
+    public LinkedList<E> getStack() {
         return stack;
     }
 
-    public void setStack(List
-    <E> stack) {
+    public void setStack(LinkedList<E> stack) {
         this.stack = stack;
     }
 
