@@ -8,13 +8,6 @@
 
 public abstract class AbstractList<E> implements List<E> {
 
-   protected double operandoA;
-	protected double operandoB;
-	
-   public boolean empty()
-   // post: regresa true si el stack esta vacio
-   {
-      return size() == 0;
-   }
+
 
 }

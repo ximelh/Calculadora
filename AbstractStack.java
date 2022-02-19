@@ -1,7 +1,7 @@
 /***
  * AbstractStack.java
- * @since 17/02/2022
  * Clase abstracta de los stack
+ * @since 17/02/2022
  */
 
 public abstract class AbstractStack<E> implements Stack<E>{
